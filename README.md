@@ -135,7 +135,8 @@ Environment Variable:
 ```
 GITHUB_TOKEN
 ```
-🔐 Secrets Configuration
+
+##🔐 Secrets Configuration
 
 This project requires a GitHub token to upload files to GitHub Releases.
 
