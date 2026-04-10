@@ -135,7 +135,48 @@ Environment Variable:
 ```
 GITHUB_TOKEN
 ```
+🔐 Secrets Configuration
 
+This project requires a GitHub token to upload files to GitHub Releases.
+
+Add Secret in Cloudflare Worker
+
+After deploying worker.js, add the following secret:
+
+Steps
+Go to Cloudflare Dashboard
+Open Workers & Pages
+Select your Worker
+Go to Settings → Variables
+Under Secrets, click Add Secret
+
+Add:
+
+Secret Name: GITHUB_TOKEN
+Secret Type: Secret
+Value: Your GitHub Personal Access Token
+
+After adding, it will appear as:
+
+GITHUB_TOKEN    Value encrypted
+Required GitHub Token Permissions
+
+Create a GitHub Personal Access Token with:
+
+repo
+
+This allows the worker to:
+
+Create Releases
+Upload Files
+Manage Release Assets
+How It Works
+
+The worker automatically reads the secret:
+
+env.GITHUB_TOKEN
+
+This keeps the GitHub token secure and prevents exposure in frontend code.
 ---
 
 # 📡 API Usage
